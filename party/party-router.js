@@ -19,11 +19,11 @@ router.post("/supplies", (req, res) => {
     })
 })
 
-router.delete("/supplies/:id", (req, res) => {
-    Party.remove(req.params.id)
-    .then(item => {
-        res.status(201).json(item)
-    })
-})
+// router.delete("/supplies/:id", (req, res) => {
+//     Party.remove(req.params.id)
+//     .then(item => {
+//         res.status(202).json(item)
+//     })
+// })
 
 module.exports = router;

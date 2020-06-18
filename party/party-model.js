@@ -2,12 +2,17 @@ const db = require("../data/connections.js");
 
 module.exports = {
     find,
+    findById,
     add,
     remove
 }
 
 function find() {
     return db("supplies");
+}
+
+function findById(itemId) {
+    return db("supplies").where({id: itemId})
 }
 
 function add(item) {
