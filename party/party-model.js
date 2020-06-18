@@ -2,7 +2,8 @@ const db = require("../data/connections.js");
 
 module.exports = {
     find,
-    add
+    add,
+    remove
 }
 
 function find() {
@@ -14,4 +15,8 @@ function add(item) {
     .then(newSupplies => {
         return newSupplies;
     })
+}
+
+function remove(itemId) {
+    return db("supplies").del().where({id: itemId});
 }
