@@ -9,4 +9,14 @@ router.get("/supplies", (req, res) => {
     })
 })
 
+router.post("/supplies", (req, res) => {
+    Party.add(req.body)
+    .then(() => {
+        res.status(200).json(req.body)
+    })
+    .catch(err => {
+        res.status(200).json({error: err.message})
+    })
+})
+
 module.exports = router;
